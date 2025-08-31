@@ -1,6 +1,6 @@
 # 🕹️ Pixel Emblem
 
-這是一款使用 Unity 製作的像素風戰棋遊戲，玩法模仿《聖火降魔錄》。  
+這是一款使用 Unity 製作的像素風戰棋遊戲。  
 玩家操控多位角色在網格地圖上戰鬥，具備回合制系統、攻擊動畫、傷害數字顯示、背景音樂與戰鬥音效。
 
 ---
@@ -20,7 +20,7 @@
 遊戲支援 **Android 手機版本**  
 目前可透過 APK 檔安裝於 Android 裝置，支援直向畫面操作，手指觸控即可完成選擇與指令下達。
 
-👉 前往 [Releases](https://github.com/123Ryo/PixelBrawl/releases/tag/v0.3) 頁面，下載最新 APK 安裝檔案進行體驗 📦
+👉 前往 [Releases](https://github.com/123Ryo/PixelEmblem/releases/tag/v0.2) 頁面，下載最新 APK 安裝檔案進行體驗 📦
 
 ---
 
