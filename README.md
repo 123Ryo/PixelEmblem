@@ -17,10 +17,7 @@
 
 ## 📱 支援平台
 
-遊戲支援 **Android 手機版本**  
-目前可透過 APK 檔安裝於 Android 裝置，支援直向畫面操作，手指觸控即可完成選擇與指令下達。
-
-👉 前往 [Releases](https://github.com/123Ryo/PixelEmblem/releases/tag/v0.2) 頁面，下載最新 APK 安裝檔案進行體驗 📦
+遊戲支援 **Android 手機版本**
 
 ---
 
