@@ -65,24 +65,24 @@
 ## 🖼️ 遊戲畫面預覽
 
 🎮 遊戲封面  
-![遊戲封面](Images/封面.png)
+<img src="Images/封面.png" width="400"/>
 
 🧱 戰棋場景與移動範圍顯示  
-![戰鬥畫面](Images/對戰畫面1.png)
-![戰鬥畫面](Images/對戰畫面.jpg)
+<img src="Images/對戰畫面1.png" width="400"/>
+<img src="Images/對戰畫面.jpg" width="400"/>
 
 ⚔️ 戰鬥動畫與傷害顯示  
-![傷害數字](Images/攻擊動畫.png)
+<img src="Images/攻擊動畫.png" width="400"/>
 
 🎲 回合開始畫面  
-![Player Phase](Images/我方回合.png)  
-![Enemy Phase](Images/敵人回合.png)
+<img src="Images/我方回合.png" width="400"/>
+<img src="Images/敵人回合.png" width="400"/>
 
 🏆 勝利畫面  
-![Victory](Images/勝利.png)
+<img src="Images/勝利.png" width="400"/>
 
 💀 失敗畫面  
-![Game Over](Images/失敗.png)
+<img src="Images/失敗.png" width="400"/>
 
 ---
 
@@ -95,4 +95,3 @@
 ## 👨‍💻 作者
 
 - GitHub 帳號：123Ryo
-- 喜愛戰棋類遊戲，致力於以 Unity 製作懷舊風格像素戰略遊戲。
