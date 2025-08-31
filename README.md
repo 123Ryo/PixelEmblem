@@ -65,24 +65,24 @@
 ## 🖼️ 遊戲畫面預覽
 
 🎮 遊戲封面  
-<img src="Images/封面.png" width="400"/>
+<img src="Images/封面.png" width="380" height="700"/>
 
 🧱 戰棋場景與移動範圍顯示  
-<img src="Images/對戰畫面1.png" width="400"/>
-<img src="Images/對戰畫面.jpg" width="400"/>
+<img src="Images/對戰畫面1.png" width="380" height="700"/>
+<img src="Images/對戰畫面.jpg" width="380" height="700"/>
 
 ⚔️ 戰鬥動畫與傷害顯示  
-<img src="Images/攻擊動畫.png" width="400"/>
+<img src="Images/攻擊動畫.png" width="380" height="700"/>
 
 🎲 回合開始畫面  
-<img src="Images/我方回合.png" width="400"/>
-<img src="Images/敵人回合.png" width="400"/>
+<img src="Images/我方回合.png" width="380" height="700"/>
+<img src="Images/敵人回合.png" width="380" height="700"/>
 
 🏆 勝利畫面  
-<img src="Images/勝利.png" width="400"/>
+<img src="Images/勝利.png" width="380" height="700"/>
 
 💀 失敗畫面  
-<img src="Images/失敗.png" width="400"/>
+<img src="Images/失敗.png" width="380" height="700"/>
 
 ---
 
