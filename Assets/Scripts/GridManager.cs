@@ -2,19 +2,24 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using System.Collections.Generic;
 
+/// <summary>
+/// 全局單例管理器，負責所有網格相關的數據查詢、座標轉換及視覺化服務。
+/// </summary>
 public class GridManager : MonoBehaviour
 {
-    public static GridManager Instance;
+    public static GridManager Instance; 
 
-    public Tilemap groundTilemap;
-    public Tilemap highlightTilemap; // 顯示移動範圍的 tilemap
-    public Tile highlightTile; // 藍色 tile
-    public Tilemap obstacleTilemap; // 障礙圖層
-    public Tilemap attackTilemap; // 攻擊範圍圖層
-    public Tile attackTile;       // 紅色 tile
+    // --- Tilemap 設定 ---
+    public Tilemap groundTilemap;    // 遊戲中的基礎地面圖層
+    public Tilemap highlightTilemap; // 顯示移動範圍的 Tilemap 圖層
+    public Tile highlightTile;       // 用於移動範圍的 藍色 tile
+    public Tilemap obstacleTilemap;  // 障礙圖層
+    public Tilemap attackTilemap;    // 顯示攻擊範圍的 Tilemap 圖層
+    public Tile attackTile;          // 用於攻擊範圍的 紅色 tile
 
     private void Awake()
     {
+        // 確保 GridManager 的單例初始化
         Instance = this;
     }
 
@@ -28,6 +33,9 @@ public class GridManager : MonoBehaviour
         return groundTilemap.WorldToCell(worldPos);
     }
 
+    /// <summary>
+    /// 判斷指定網格座標是否可以通行 (沒有障礙物且有地板)。
+    /// </summary>
     public bool IsWalkable(Vector3Int gridPos)
     {
         // 不可走條件：障礙物有 tile
@@ -41,6 +49,9 @@ public class GridManager : MonoBehaviour
         return true;
     }
 
+    /// <summary>
+    /// 用在戰鬥系統中, 判斷指定網格座標是否有 單位 佔據。
+    /// </summary>
     public bool HasUnitAt(Vector3Int gridPos)
     {
         Vector3 worldPos = GetWorldPositionFromGrid(gridPos);
@@ -52,13 +63,17 @@ public class GridManager : MonoBehaviour
         return false;
     }
 
-    // 判斷該格子是否被角色佔據（用於移動範圍不能站上）
+    /// <summary>
+    /// 用在移動系統中,判斷該格子是否被角色佔據並阻擋移動。(預留未來擴展,某些特殊單位不會阻擋移動)
+    /// </summary>
     public bool IsTileBlockedByUnit(Vector3Int gridPos)
     {
         return HasUnitAt(gridPos);
     }
 
-    // 顯示 highlight tiles（藍色）
+    /// <summary>
+    /// 顯示移動範圍的藍色高亮 Tile。
+    /// </summary>
     public void ShowMoveRange(List<Vector3Int> positions)
     {
         Debug.Log("顯示移動範圍格子數量：" + positions.Count);
@@ -71,14 +86,18 @@ public class GridManager : MonoBehaviour
         highlightTilemap.RefreshAllTiles();
     }
 
-    // 清除所有 highlight tile(包含紅色攻擊範圍)
+    /// <summary>
+    /// 清除所有高亮 Tilemap (包括移動範圍和攻擊範圍)。
+    /// </summary>
     public void ClearHighlights()
     {
         highlightTilemap.ClearAllTiles();
         attackTilemap.ClearAllTiles();
     }
 
-    // 顯示 attackTilemap（紅色）
+    /// <summary>
+    /// 顯示攻擊範圍的紅色高亮 Tile。
+    /// </summary>
     public void ShowAttackRange(List<Vector3Int> positions)
     {
         foreach (var pos in positions)
@@ -88,6 +107,9 @@ public class GridManager : MonoBehaviour
         attackTilemap.RefreshAllTiles();
     }
 
+    /// <summary>
+    /// 獲取指定網格座標上的 UnitController 實例。
+    /// </summary>
     public UnitController GetUnitAt(Vector3Int gridPos)
     {
         Vector3 worldPos = GetWorldPositionFromGrid(gridPos);
@@ -98,22 +120,4 @@ public class GridManager : MonoBehaviour
         }
         return null;
     }
-
-    /// <summary>
-    /// ✅ 從場上移除指定格子的角色（由 CombatManager 呼叫）
-    /// </summary>
-    public void RemoveUnitAt(Vector3Int gridPos)
-    {
-        // 現在是物理檢查方式 → 不需要從 unitDict 等資料中移除
-        // 這裡是為了搭配死亡後清理用的
-
-        UnitController unit = GetUnitAt(gridPos);
-        if (unit != null)
-        {
-            Debug.Log($"從 GridManager 移除 {unit.unitName} 位於 {gridPos} 的角色。");
-            // 實際資料移除已由 CombatManager.Destroy(unit.gameObject) 處理
-        }
-    }
-
-    
 }
