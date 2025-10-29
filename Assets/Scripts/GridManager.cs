@@ -3,7 +3,7 @@ using UnityEngine.Tilemaps;
 using System.Collections.Generic;
 
 /// <summary>
-/// 全局單例管理器，負責所有網格相關的數據查詢、座標轉換及視覺化服務。
+/// 全局單例管理器，負責所有網格相關的數據查詢、座標轉換及視覺化。
 /// </summary>
 public class GridManager : MonoBehaviour
 {
